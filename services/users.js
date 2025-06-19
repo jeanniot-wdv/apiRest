@@ -4,6 +4,8 @@ const bcrypt = require('bcrypt');
 // On importe le modele de données
 const User = require('../models/user');
 
+const SECRET_KEY = process.env.SECRET_KEY;
+
 // Ici c'est le callback qui servira à ajouter un user
 exports.add = async (req, res, next) => {
     const temp = ({
