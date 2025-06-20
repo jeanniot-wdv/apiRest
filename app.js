@@ -30,4 +30,7 @@ app.use(function(req, res, next) {
     res.status(404).json({name: 'MYAPI', version: '1.0', status: 404, message: 'not_found'});
 });
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 module.exports = app;
