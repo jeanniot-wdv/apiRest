@@ -6,7 +6,7 @@ const fs = require('fs');
 exports.createOneFile = (req, res, next) => {
     const file = new File({
         name: req.file.filename,
-        imageUrl: `${req.protocol}://localhost:3000/uploads/${req.file.filename}`,
+        fileUrl: `${req.protocol}://localhost:3000/uploads/${req.file.filename}`,
         userId: req.body.userId
     });
 

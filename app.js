@@ -4,6 +4,7 @@ const logger = require('morgan');
 const cors = require('cors');
 
 const indexRouter = require('./routes/index');
+const filesRouter = require('./routes/files');
 const mongodb = require('./db/mongo');
 
 const path = require('path');
@@ -25,6 +26,7 @@ app.use(cookieParser());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/', indexRouter);
+app.use('/files', filesRouter);
 
 app.use(function(req, res, next) {
     res.status(404).json({name: 'MYAPI', version: '1.0', status: 404, message: 'not_found'});
